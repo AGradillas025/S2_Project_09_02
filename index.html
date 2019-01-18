@@ -70,7 +70,7 @@
 
                 <label for="stateBox">State</label>
                 <input name="state" id="stateBox" type="text" list="stateList" required />
-                <!-- Created a data list with a id of state ist to allow all the abbreviations of the states to be an option for the user to choose. -->
+                <!-- Created a data list with a id of state List to allow all the abbreviations of the states to be an option for the user to choose. -->
                 <datalist id="stateList">
                     <option value="AL">
                     <option value="AK">
@@ -133,6 +133,25 @@
                 <label for="phoneBox">Phone</label>
                 <input name="hone" id="phoneBox" type="text" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"
                     required />
+            </fieldset>
+
+            <!-- Created another fieldset which would be for the credit card information, which is why the fieldset was set to have a id of creditCard. Within the fieldset a legend was implemented so that way the "Credit Card (required)" would be displayed as a caption. -->
+            <fieldset id="creditCard">
+                <legend>Credit Card (required)</legend>
+                <fieldset>
+                    <label class="cardLabel" for="cCard">
+                        <option value="amex"></option>
+                    </label>
+                    <label class="cardLabel" for="cCard">
+                        <option value="discover"></option>
+                    </label>
+                    <label class="cardLabel" for="cCard">
+                        <option value="master"></option>
+                    </label>
+                    <label class="cardLabel" for="cCard">
+                        <option value="visa"></option>
+                    </label>
+                </fieldset>
             </fieldset>
         </form>
 
