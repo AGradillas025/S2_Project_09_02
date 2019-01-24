@@ -135,41 +135,54 @@
                     required />
             </fieldset>
 
-            <!-- Created another fieldset which would be for the credit card information, which is why the fieldset was set to have a id of creditCard. Within the fieldset a legend was implemented so that way the "Credit Card (required)" would be displayed as a caption. -->
+            <!-- Created another fieldset which would be for the credit card information, which is why the fieldset was set to have a id of creditCard. Within the fieldset a legend was implemented so that way the "Credit Card (required)" would be displayed as a caption. Furthermore, for the fieldset it was set to have a class="cardLabel" and to be required. Also, within theat fieldset there are 4 labels representing 4 different cards and within the labels the input of a radio type was used to allow there to be a button next to the images of the cards. -->
             <fieldset id="creditCard">
                 <legend>Credit Card (required)</legend>
-                <fieldset>
-                    <label class="cardLabel" for="cCard">
-                        <option value="amex"></option>
-                        <img src="sb_amex.png" alt="sb_amex.png" />
+                <fieldset class="cardLabel" required>
+                    <label class="cardLabel" for="amex">
+                        <input name="card" id="amex" value="Amex" type="radio" />
+                        <img src="sb_amex.png" alt="amex" />
                     </label>
-                    <label class="cardLabel" for="cCard">
-                        <option value="discover"></option>
-                        <img src="sb_discover.png" alt="sb_discover.png" />
+                    <label class="cardLabel" for="discover">
+                        <input name="card" id="discover" value="Discover" type="radio" />
+                        <img src="sb_discover.png" alt="discover" />
                     </label>
-                    <label class="cardLabel" for="cCard">
-                        <option value="master"></option>
-                        <img src="sb_master.png" alt="sb_master.png" />
+                    <label class="cardLabel" for="master">
+                        <input name="card" id="master" value="Master" type="radio" />
+                        <img src="sb_master.png" alt="master" />
                     </label>
-                    <label class="cardLabel" for="cCard">
-                        <option value="visa"></option>
-                        <img src="sb_visa.png" alt="sb_visa.png" />
+                    <label class="cardLabel" for="visa">
+                        <input name="card" id="visa" value="Visa" type="radio" />
+                        <img src="sb_visa.png" alt="visa" />
                     </label>
                 </fieldset>
+
+                <!-- The label and the input will allow the user to identify that it is the "Credit Card Number" that must be submitted in this text box, which it has a certain pattern that must be typed in that way in order for it to be submitted. Also, the input is required, so the card number is a must have in the payment form.  -->
+                <label for="cardNumber">Credit Card Number</label>
+                <input type="text" id="cardBox" pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$"
+                    required />
+
+                <!--  -->
+                <label for="monthList">Expiration Date</label>
+                <select name="cardMonth" id="monthList" required>
+                    <option value="text">January (01)</option>
+                    <option value="text">February (02)</option>
+                    <option value="text">December (12)</option>
+                </select>
+                <select name="cardYear" id="yearList" required>
+                    <option value="text">2017</option>
+                    <option value="text">2018</option>
+                    <option value="text">2019</option>
+                    <option value="text">2020</option>
+                    <option value="text">2021</option>
+                </select>
+
+                <label for="cscBox">CSC</label>
+                <input type="text" id="cscBox" max="3px" pattern="^\d{3}$" placeholder="nnn" required />
             </fieldset>
 
-            <!-- The label and the input will allow the user to identify that it is the "Credit Card Number" that must be submitted in this text box, which it has a certain pattern that must be typed in that way in order for it to be submitted. Also, the input is required, so the card number is a must have in the payment form.  -->
-            <label for="cardNumber">Credit Card Number</label>
-            <input type="text" id="cardBox" pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$"
-                required />
-
-            <!--  -->
-            <label for="monthList">Expiration Date</label>
-            <select name="cardMonth" id="monthList">
-                <option value="text">January (01)</option>
-                <option value="text">February (02)</option>
-                <option value="text">December (12)</option>
-            </select>
+            <!-- Created the button element for the next button to be implemented for the users to be able to submit the form. -->
+            <button type="submit"><img src="sb_button.png" alt="next"></button>
         </form>
 
         <aside>
